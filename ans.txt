@@ -1,0 +1,83 @@
+
+ASSIGNMENT-17(GUI)
+Q1. Write a python program using tkinter interface to write Hello World 
+and a exit button that closes the interface.
+Q2. Write a python program to in the same interface as above and create 
+a action when the button is click it will display some text.
+Q3. Create a frame using tkinter with any label text and two buttons.One 
+to exit and other to change the label to some other text.
+2/5
+Q1. Write a python program using tkinter interface to write Hello World 
+and a exit button that closes the interface.
+
+
+ans1)
+from tkinter import *
+root = Tk()
+root.title('gui')
+root.geometry('300x300')
+hwL = Label(root, text='Hello World!!')
+hwL.pack()
+exitB = Button(root, text='exit', \
+command=root.destroy)
+exitB.pack()
+root.mainloop()
+
+
+ans2)
+from tkinter import *
+def showtext():
+    labL=Label(root,text='welcome')
+    labL.pack()
+root = Tk()
+root.title('gui')
+root.geometry('300x300')
+hwL = Label(root, text='Hello World!!')
+hwL.pack()
+submitB=Button(root, text='submit', \
+        command=showtext)
+exitB = Button(root, text='exit', \
+command=root.destroy)
+exitB.pack()
+submitB.pack()
+root.mainloop()
+
+ans3)
+
+from tkinter import *
+def showtext():
+    hwL.configure(text="Hello Python", font='Times 20 bold')
+    hwL.pack()
+root = Tk()
+root.title('gui')
+root.geometry('300x300')
+frame=Frame(root, bg='black')
+frame.pack()
+hwL = Label(frame, text='Hello World!!', bg='red')
+hwL.pack()
+changeB=Button(root, text='change', \
+        command=showtext)
+exitB = Button(root, text='exit', \
+command=root.destroy)
+exitB.pack()
+changeB.pack()
+root.mainloop()
+
+ans4)
+from tkinter import *
+def func():
+    nmL.configure(text=nmE.get(),font='Times 15 ')
+    nmL.pack()
+root=Tk()
+hwL=Label(root,text='Enter your name:',font='Times 20 bold')
+hwL.pack()
+nmE=Entry(root)
+nmE.pack()
+submitB=Button(root,text="Submit",command=func)
+submitB.pack()
+exitB=Button(root,text="Exit",command=root.destroy)
+exitB.pack()
+nmL=Label(root)
+nmL.pack()
+root.mainloop()
+
